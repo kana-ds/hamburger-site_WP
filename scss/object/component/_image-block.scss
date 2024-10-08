@@ -1,0 +1,21 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.c-image-block {
+    width: 100%;
+    min-height: 17.3rem;
+    display: flex;
+    gap: 1rem;
+    @include mixin.breakpoint(tablet) {
+        gap: 2rem;
+    }
+    img {
+        width: 42%;
+        height: 50%;
+        object-fit: cover;
+        aspect-ratio: 1.7 / 1;
+    }
+    p {
+        width: 58%;
+    }
+}

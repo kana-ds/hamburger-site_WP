@@ -1,0 +1,9 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+@use "button";
+
+.c-form {
+    border: 1px solid variables.$color--dark-gray;
+    border-radius: 10px;
+    background: variables.$color--white;
+}

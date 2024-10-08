@@ -1,0 +1,83 @@
+@charset "UTF-8";
+// ===============================================================
+// use
+// ===============================================================
+
+// foundationフォルダ
+// リセット
+@forward "foundation/reset";
+
+// ベース
+@forward "foundation/base";
+
+// 関数
+@forward "foundation/variables";
+
+// mixin
+@forward "foundation/mixin"; 
+
+// layoutフォルダ
+// ヘッダー
+@forward "layout/header";
+
+// メイン
+@forward "layout/main";
+
+// サイドバー
+@forward "layout/sidebar";
+
+// フッター
+@forward "layout/footer"; 
+
+// objectフォルダ
+// componentフォルダ
+
+// ボタン
+@forward "object/component/button";
+
+// フォーム
+@forward "object/component/form";
+
+// カード
+@forward "object/component/card";
+
+// グリッド
+@forward "object/component/grid";
+
+// ページネーション
+@forward "object/component/pagination";
+
+// 画像とテキスト 
+@forward "object/component/image-block";
+
+// ギャラリー
+@forward "object/component/gallery";
+
+// テーブル
+@forward "object/component/table";
+
+// リスト
+@forward "object/component/list";
+
+// projectフォルダ
+// ボタン
+@forward "object/project/button";
+
+// オーバーレイ
+@forward "object/project/overlay";
+
+// 説明用ボックス
+@forward "object/project/box";
+
+// サーチフォーム
+@forward "object/project/search-form";
+
+// 引用
+@forward "object/project/blockquote";
+
+// フォントスタイル
+@forward "object/project/typography";
+
+// utilityフォルダ
+// グローバル
+@forward "object/utility/globals";

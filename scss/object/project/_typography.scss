@@ -1,0 +1,192 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.p-text--header {    
+    h1 {
+        color: variables.$color--dark-gray;
+        font-size: 4rem;
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+        line-height: 4.7rem;
+
+        @include mixin.breakpoint(pc) {
+            font-size: 6.4rem;
+            line-height: 7.5rem;
+        }
+    }
+}
+
+.p-text--menu-button {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.p-text--main-visual {
+    font-weight: 700;
+    color: variables.$color--white;
+    h2 {
+        font-size:3.6rem;
+        @include mixin.breakpoint(pc) {
+            font-size: 4rem;
+        }
+    }
+    p {
+        line-height: 2.4rem;
+    }
+}
+
+.p-text--content-block {
+    h3 {
+        font-weight: 700;
+        font-size: 2.8rem; 
+        line-height: 4.2rem;
+    }
+    p {
+        font-weight: 400;
+        line-height: 2.4rem;
+    }
+}
+
+.p-text--card {
+    h3 {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        @include mixin.breakpoint(pc) {
+            font-size: 3.6rem;
+            line-height: 5.3rem;
+        }
+    }
+    h4 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        @include mixin.breakpoint(pc) {
+            font-size: 2.4rem;
+            line-height: 3.6rem;
+        }
+    }
+    p {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+}
+
+.p-single-heading--h1 {
+    font-weight: 700;
+    font-size: 3.6rem;
+    color: variables.$color--white;
+    @include mixin.breakpoint(tablet) {
+        font-size: 6rem;
+        line-height: 9rem;
+    }
+}
+
+.p-single-heading {
+    font-weight: 700;
+    line-height: 4.2rem;
+    color: variables.$color--brown;
+    h2 {
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        @include mixin.breakpoint(tablet) {
+            font-size: 3.6rem;
+            line-height: 5.3rem;
+        }
+    }
+    h3 {
+        font-size: 2.4rem;
+        @include mixin.breakpoint(tablet) {
+            font-size: 2.8rem;
+            line-height: 4.2rem;
+        }
+    }
+    h4,
+    h5,
+    h6 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+
+
+.p-text--blockquate {
+    color: variables.$color--brown;
+    a {
+        color: #4A6C9B;
+        text-decoration: underline;
+        line-height: 2.4rem;
+        font-style: normal;
+    }
+}
+
+.p-text--image-block {
+    line-height: 2.4rem;
+    color: variables.$color--brown;
+}
+
+.p-text--button {
+    font-weight: 700;
+    line-height: 1.7rem;
+    color: variables.$color--dark-gray;
+}
+
+.p-text--list {
+    line-height: 2.4rem;
+    color: variables.$color--brown;
+}
+
+.p-text--code {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 400;
+    line-height: 2.4rem;
+    color: variables.$color--brown;
+}
+
+.p-text--table {
+    line-height: 2.4rem;
+    color: variables.$color--brown;
+    th {
+        font-weight: normal;
+    }
+}
+
+.p-text--single--b {
+    font-weight: 700;
+    line-height: 2.4rem;
+    color: variables.$color--brown;
+
+}
+
+.p-text--pagination {
+    line-height: 2.4rem;
+    @include mixin.breakpoint(tablet) {
+        font-weight: 700;
+        font-family: "Roboto", sans-serif;
+        line-height: 3.3rem;
+        color: variables.$color--dark-gray;
+        li {
+            &.is-active {
+                color: variables.$color--white;
+            }
+        }
+    }
+}
+
+.p-text--footer { 
+    font-weight: 400;
+    color: variables.$color--white;
+    &__menu {
+        font-size:1.8rem;
+        @include mixin.breakpoint(tablet) {
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+    }
+    &__copyright {
+        font-size:1.4rem;
+        line-height: 2.1rem;
+    }
+}

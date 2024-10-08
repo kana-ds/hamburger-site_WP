@@ -1,0 +1,25 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.p-blockquote {
+    background-color: variables.$color--gray;
+    blockquote {
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 3rem;
+        padding-bottom: 2.7rem;
+        @include mixin.breakpoint(tablet) {
+            width: 85%;
+            padding-top: 5rem;
+            padding-bottom: 5.7rem;
+            .p-reference {
+                padding-top: 6rem;
+            }
+        }
+        @include mixin.breakpoint(pc) {
+            width: 90%;
+            padding-bottom: 4.7rem;
+        }
+    }
+    
+}

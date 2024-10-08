@@ -1,0 +1,8 @@
+@use "../../foundation/mixin";
+
+body.is-open {
+	position: fixed;
+	@include mixin.breakpoint(pc) {
+		position: static;
+	}
+}

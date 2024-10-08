@@ -1,0 +1,52 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.p-box {
+    &--information {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        dl {
+            display: flex;
+            flex-direction: column;
+            flex: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: variables.$color--brown;
+            padding: 1.6rem;
+            line-height: 2.4rem;
+            margin-bottom: 1.6rem;
+            dt {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 0.8rem;
+                @include mixin.breakpoint(tablet) {
+                    font-size: 2.4rem;
+                    margin-bottom: 1.6rem;
+                }
+                @include mixin.breakpoint(pc) {
+                    margin-bottom: 1rem;
+                }
+            }
+            dd {
+                display: flex;
+                align-items: stretch;
+                flex: 1;
+                font-size: 1.6rem;
+                font-weight: 400;
+                line-height: 2.4rem;
+                @include mixin.breakpoint(tablet) {
+                    font-size: 1.4rem;
+                    line-height: 2rem;
+                }
+                @include mixin.breakpoint(pc) {
+                    font-size: 1.6rem;
+                    line-height: 2.4rem;
+                }
+            }
+        }
+    }
+}
+

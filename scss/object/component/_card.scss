@@ -1,0 +1,29 @@
+@use "../../foundation/mixin";
+@use "../../foundation/variables";
+
+.c-card {
+    @include mixin.breakpoint(tablet) {
+        display: flex;
+    }    
+    &__image {
+        flex: 1;
+        img{
+            @include mixin.breakpoint(tablet) {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+    &__text-area {
+        flex: 1;
+        background-color: variables.$color--brown;
+        color: variables.$color--white;
+        padding: 3.2rem 1.6rem 4.3rem 1.6rem;
+        @include mixin.breakpoint(tablet) {
+            padding: 3.1rem 5.9rem 4rem 3.5rem;
+        }
+        @include mixin.breakpoint(pc) {
+            padding: 5.6rem 10.4rem 6rem 6.3rem;
+        }
+    }
+}
