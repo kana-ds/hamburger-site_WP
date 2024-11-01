@@ -1,25 +1,26 @@
 @use "../../foundation/mixin";
 @use "../../foundation/variables";
 
-.c-table {
+.c-table, tbody {
     border-collapse: collapse;
     width: 100%;
     tr {
         border: solid 1px variables.$color--dark-gray;
         height: 7.7rem;
-        th,td {
+        td {
             border: solid 1px variables.$color--dark-gray;
             padding-left: 2.4rem;
             @include mixin.breakpoint(tablet) {
                 padding-left: 3rem;
             }
-        }
-        th {
-            width: 40%;
-            text-align: left;
-            @include mixin.breakpoint(tablet) {
-                width: 30%;
+            &:first-of-type {
+                width: 40%;
+                text-align: left;
+                @include mixin.breakpoint(tablet) {
+                    width: 30%;
+                }
             }
         }
+        
     }
 }

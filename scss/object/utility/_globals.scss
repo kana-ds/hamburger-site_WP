@@ -2,6 +2,7 @@
 
 body.is-open {
 	position: fixed;
+	overflow: hidden;
 	@include mixin.breakpoint(pc) {
 		position: static;
 	}

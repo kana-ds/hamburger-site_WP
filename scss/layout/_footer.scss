@@ -3,7 +3,8 @@
 
 .l-footer { 
     position: fixed;
-    bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     position: relative; 
     img {
         object-fit: cover;
@@ -27,6 +28,9 @@
             display: inline-block;
             &:not(:first-child)::before {
                 content: "｜";
+            }
+            &:hover {
+                opacity: 0.8;
             }
         }
     }

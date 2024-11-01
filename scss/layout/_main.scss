@@ -1,6 +1,15 @@
 @use "../foundation/variables";
 @use "../foundation/mixin";
 
+// footerが上に上がってこないように調整
+.l-container {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    .l-container {
+        flex: 1;
+    }
+}
 
 .l-main-visual {
     position: relative;
@@ -47,13 +56,38 @@
     }
     
     &--single {
-        position: relative;
-        height: 22.5rem;
+        position: relative;        
+        margin-bottom: 3.4rem;
         @include mixin.breakpoint(tablet) {
             height: 50.5rem;
+            margin-bottom: 6rem;
         }
         @include mixin.breakpoint(pc) {
             height: 50rem;
+            margin-bottom: 6.3rem;
+        }
+        &__title {
+            padding-top:21rem;
+            padding-bottom: 20rem;
+        }
+    }
+    &--single {
+        &.no-thumbnail {
+            height: auto; // 画像がない場合に高さを自動調整
+            padding-top: 10rem;
+            margin-bottom: 0;
+            @include mixin.breakpoint(tablet) {
+                padding-top: 20rem;
+            }
+            .l-main-visual__title {
+                margin-left: 0;
+                @include mixin.breakpoint(tablet) {
+                    margin-left: 2%;
+                }
+                @include mixin.breakpoint(pc) {
+                    margin-left: 4%;
+                }
+            }
         }
     }
 }
@@ -80,6 +114,12 @@
             @include mixin.breakpoint(tablet) {
                 margin-bottom: 0;
             }
+            a {
+                &:hover {
+                    opacity: 0.8;
+                    transition: all 300ms ease-in-out;
+                }
+            }
         }
     }
 }
@@ -103,10 +143,10 @@
         padding-top: 22rem;
     }
     &.branch-menu__img01 {
-        background-image: url(../../images/branch-menu_img01.jpg);
+        background-image: url(../images/branch-menu_img01.jpg);
     }
     &.branch-menu__img02 {
-        background-image: url(../../images/branch-menu_img02.jpg);
+        background-image: url(../images/branch-menu_img02.jpg);
     }
     h3 {
         position: relative;
@@ -287,42 +327,26 @@
     }
 }
 
-.l-single-heading {
+.l-content--404 {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3.2rem;
+    @include mixin.breakpoint(tablet) {
+        padding-top: 3.9rem;
+    }
+    @include mixin.breakpoint(pc) {
+        padding-top: 6.3rem;
+    }
     h2 {
         margin-bottom: 2.5rem;
         @include mixin.breakpoint(tablet) {
-            margin-bottom: 5.5rem;
+            margin-bottom: 2rem;
         }
     }
-    h3 {
-        margin-bottom: 2.8rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 5.6rem;
-        }
-    }
-    h4 {
-        margin-bottom: 3.4rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 7.3rem;
-            @include mixin.breakpoint(pc) {
-                margin-bottom: 5.7rem;
-            }
-        }
-    }
-    h5 {
-        margin-bottom: 2.7rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 5.7rem;
-        }
-    }
-    h6 {
-        margin-bottom: 2.6rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 5.7rem;
-        }
+    p {
+        margin-bottom: 4rem;
     }
 }
-
 
 .l-card {
     width: 100%;
@@ -354,6 +378,11 @@
         }
         &__button {
             text-align: center;
+            display: block;
+            &:hover {
+                opacity: 0.5;
+                transition : all 0.5s ease 0s;
+            }
         }
     }
 }
@@ -383,7 +412,6 @@
             visibility: visible;
             transition: opacity 0.3s ease, visibility 0s 0s;
             display: flex;
-            margin-right: 1.5rem;
         }
     }
     &--tab {
@@ -393,7 +421,8 @@
             margin-right: 2rem;
         }
     }
-    &__prev {
+    .prev {
+        border: none;
         img {
             margin-right: 0.8rem;
             @include mixin.breakpoint(tablet) {
@@ -401,13 +430,18 @@
             }
         }
     }
-    &__next {
+    .next {
+        border: none;
         img {
+            border: none;
             margin-left: 0.8rem;
             @include mixin.breakpoint(tablet) {
                 margin-left: 0;
             }
         }
+    }
+    .dots {
+        margin-right: 1.5rem;
     }
 }
 
@@ -417,120 +451,162 @@
     }
 }
 
-.l-content--single {
-    width: 90%;
-    margin: 0 auto;
-    @include mixin.breakpoint(pc) {
-        width: 87%;
-    }
-}
-
-.l-blockquote {
-    margin-bottom: 3rem;
-    @include mixin.breakpoint(tablet) {
-        margin-bottom: 6rem;
+.single,
+.page {
+    .l-content--single,
+    .l-content--page {
+        width: 90%;
+        margin: 0 auto;
+        @include mixin.breakpoint(pc) {
+            width: 87%;
+        }
+        h2 {
+            margin-bottom: 2.5rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 5.5rem;
+            }
+        }
+        h3 {
+            margin-bottom: 2.8rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 5.6rem;
+            }
+        }
+        h4 {
+            margin-bottom: 3.4rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 7.3rem;
+                @include mixin.breakpoint(pc) {
+                    margin-bottom: 5.7rem;
+                }
+            }
+        }
+        h5 {
+            margin-bottom: 2.7rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 5.7rem;
+            }
+        }
+        h6 {
+            margin-bottom: 2.6rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 5.7rem;
+            }
+        }
+        p {
+            margin-bottom: 3.6rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+            }
+            &:has(strong) {
+                margin-bottom: 6.9rem;
+                @include mixin.breakpoint(tablet) {
+                    margin-bottom: 15rem;
+                }
+                @include mixin.breakpoint(pc) {
+                    margin-bottom: 27.7rem;
+                }
+            }
+        }
+        .l-blockquote,
+        .wp-block-quote {
+            margin-bottom: 3rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+            }
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .wp-block-image {
+            text-align: center;
+            object-fit: cover;
+            margin-bottom: 3rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+            }
+            &:nth-of-type(1) {
+                width: 100%;
+                
+            }
+            &:nth-of-type(2) {
+                width: 80%;
+                aspect-ratio: 1.7 / 1;
+                object-fit: cover;
+                @include mixin.breakpoint(tablet) {
+                    margin-bottom: 24rem;
+                }
+                
+            }
+        }
+    
+        .wp-block-columns {
+            margin-bottom: 3rem;
+            &:last-of-type {
+                margin-bottom: 3rem;
+                @include mixin.breakpoint(tablet) {
+                    margin-bottom: 6rem;
+                }
+            }
+        }
+    
+        .wp-block-gallery {
+            margin-bottom: 3.3rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+                margin-top: 18rem;
+            }
+            @include mixin.breakpoint(pc) {
+                margin-bottom: 5.4rem;
+                margin-top: 0;
+            }
+        }
+    
+        .wp-block-list {
+            @include mixin.breakpoint(tablet) {
+                margin-left: 5rem;
+            }
+            &:nth-of-type(even) {
+                margin-left: 1.8rem;
+                @include mixin.breakpoint(tablet) {
+                    margin-left: 9.8rem;
+                }
+            }
+        }
+        
+        ol.wp-block-list:nth-of-type(3) {
+            margin-bottom: 5.7rem;
+        }
+        ul.wp-block-list:nth-of-type(3) {
+            margin-bottom: 2.6rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 5.6rem;
+            }
+        }
+        
+    
+        .l-code, .wp-block-code {
+            white-space: pre-line;
+            background-color: variables.$color--gray;
+            padding: 5rem;
+            margin-bottom: 3rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+            }
+            @include mixin.breakpoint(pc) {
+                margin-bottom: 5rem;
+            }
+        }
+    
+        .wp-block-table {
+            margin-bottom: 6rem;
+        }
+    
+        .wp-block-buttons {
+            margin-bottom: 3.1rem;
+            @include mixin.breakpoint(tablet) {
+                margin-bottom: 6rem;
+            }
+        }
     }    
-}
-
-.l-image--single {
-    text-align: center;
-    object-fit: cover;
-    &__01 {
-        width: 100%;
-        margin-bottom: 3rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 6rem;
-        }
-    }
-    &__02 {
-        width: 80%;
-        margin-bottom: 3rem;
-        aspect-ratio: 1.7 / 1;
-        object-fit: cover;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 24rem;
-        }
-        @include mixin.breakpoint(pc) {
-            margin-bottom: 6rem;
-            width: 42%;
-        }
-    }
-}
-
-.l-image-block {
-    &--01 {
-        margin-bottom: 3rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 12rem;
-        }
-        @include mixin.breakpoint(pc) {
-            margin-bottom: 6rem;
-        }
-    }
-    &--02 {
-        margin-bottom: 3rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 6rem;
-        }
-    }
-}
-
-
-.l-gallery {
-    margin-bottom: 3.3rem;
-    @include mixin.breakpoint(tablet) {
-        margin-bottom: 6rem;
-    }
-    @include mixin.breakpoint(pc) {
-        margin-bottom: 5.4rem;
-    }
-}
-
-.l-list {
-    &__ol {
-        margin-bottom: 5.7rem;
-    }
-    &__ul {
-        margin-bottom: 2.6rem;
-        @include mixin.breakpoint(tablet) {
-            margin-bottom: 5.6rem;
-        }
-    }
-    @include mixin.breakpoint(tablet) {
-        margin-left: 5rem;
-    }
-}
-
-.l-code {
-    white-space: pre-line;
-    background-color: variables.$color--gray;
-    padding: 5rem;
-    margin-bottom: 3rem;
-    @include mixin.breakpoint(tablet) {
-        margin-bottom: 6rem;
-    }
-    @include mixin.breakpoint(pc) {
-        margin-bottom: 5rem;
-    }
-}
-
-.l-table {
-    margin-bottom: 6rem;
-}
-
-.l-button {
-    margin-bottom: 3.1rem;
-    @include mixin.breakpoint(tablet) {
-        margin-bottom: 6rem;
-    }
-}
-
-.l-bold-text {
-    margin-bottom: 6.9rem;
-    @include mixin.breakpoint(tablet) {
-        margin-bottom: 15rem;
-    }
-    @include mixin.breakpoint(pc) {
-        margin-bottom: 27.7rem;
-    }
 }

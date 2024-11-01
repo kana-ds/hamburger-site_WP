@@ -54,6 +54,11 @@
             width: 39.6rem;
             padding-left: 4.9rem;
         }
+        /* クリアボタンを非表示にするスタイルを追加 */
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
     }
     &__submit {
         width: 9rem;

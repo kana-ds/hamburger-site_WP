@@ -1,25 +1,36 @@
 @use "../../foundation/mixin";
 @use "../../foundation/variables";
 
-.c-page {
-    @include mixin.breakpoint(tablet) {
-        width: 3.5rem;
-        height: 3.5rem;
-        border: 1px solid variables.$color--dark-gray;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
-        &.is-active {
-            background-color: variables.$color--dark-brown;
-        }
-        a {
-            display: block;
-            width: 100%;
-            height: 100%;
-            display: flex;
+.page-numbers {
+    .c-page {
+        @include mixin.breakpoint(tablet) {
+            width: 3.5rem;
+            height: 3.5rem;
+            border: 1px solid variables.$color--dark-gray;
+            text-align: center;
             align-items: center;
             justify-content: center;
+            margin-right: 1.5rem;
+            line-height: 1;
+            transition: opacity 0.3s ease; 
+            &:hover {
+                opacity: 0.7;
+            }
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
+    }
+    &.current {
+        li {
+            background-color: variables.$color--dark-brown;
+            color: white;
+            pointer-events: none;
+        }        
     }
 }

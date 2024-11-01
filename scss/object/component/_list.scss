@@ -1,19 +1,7 @@
 @use "../../foundation/mixin";
 @use "../../foundation/variables";
 
-.c-list {
-    ol,ul {
-        margin-bottom: 1.7rem;
-    }
-    ol {
-        list-style-type: decimal;
-        list-style-position: inside;
-    }
-}
-
-.c-list--style02 {
-    margin-left: 1.8rem;
-    @include mixin.breakpoint(tablet) {
-        margin-left: 5rem;
-    }
+ol.wp-block-list,
+ul.wp-block-list {
+    margin-bottom: 1.7rem;
 }

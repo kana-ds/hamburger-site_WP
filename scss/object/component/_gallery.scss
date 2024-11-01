@@ -1,20 +1,25 @@
 @use "../../foundation/mixin";
 @use "../../foundation/variables";
 
-.c-gallery {
+.l-content--single {
+  .wp-block-gallery {
+    width: 100%;
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
     @include mixin.breakpoint(tablet) {
-		grid-template-columns: repeat(2, 1fr);
-    gap: 1.6rem;
-	}
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
     @include mixin.breakpoint(pc) {
-		grid-template-columns: repeat(3, 1fr);
-	}
-  img {
-    width: 100%;
-    aspect-ratio: 1.7 / 1;
-    object-fit: cover;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .wp-block-image {
+      img {
+        object-fit: cover;
+        width: 100%;
+        aspect-ratio: 1.7 / 1;
+      }
+    }
   }
 }

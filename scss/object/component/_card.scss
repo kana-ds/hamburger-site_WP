@@ -6,8 +6,9 @@
         display: flex;
     }    
     &__image {
-        flex: 1;
+        flex: 1; 
         img{
+            width: 100%;
             @include mixin.breakpoint(tablet) {
                 object-fit: cover;
                 height: 100%;

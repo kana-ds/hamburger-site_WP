@@ -1,25 +1,37 @@
 @use "../../foundation/mixin";
 @use "../../foundation/variables";
 
-.p-blockquote {
+.wp-block-quote {
     background-color: variables.$color--gray;
-    blockquote {
-        width: 90%;
+    padding-top: 3rem;
+    @include mixin.breakpoint(tablet) {
+        padding-top: 5rem;
+    }
+    blockquote, p {
         margin: 0 auto;
-        padding-top: 3rem;
-        padding-bottom: 2.7rem;
+    }
+    p {
+        width: 90%;
         @include mixin.breakpoint(tablet) {
             width: 85%;
-            padding-top: 5rem;
-            padding-bottom: 5.7rem;
-            .p-reference {
-                padding-top: 6rem;
-            }
         }
         @include mixin.breakpoint(pc) {
             width: 90%;
-            padding-bottom: 4.7rem;
+        }
+        &:first-of-type {
+            padding-bottom: 2.7rem;
+            @include mixin.breakpoint(tablet) {
+                padding-bottom: 5.7rem;
+            }
+        }
+        &:last-of-type {
+            padding-bottom: 2.7rem;
+            @include mixin.breakpoint(tablet) {
+                padding-bottom: 6.1rem;
+            }
+            @include mixin.breakpoint(pc) {
+                padding-bottom: 4.7rem;
+            }
         }
     }
-    
 }
