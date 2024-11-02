@@ -2,19 +2,25 @@
             
             <main class="l-main c-main p-main">
                 <?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
-                <article class="l-contents">
-                <div class="l-main-visual l-main-visual--single p-text--main-visual <?php echo esc_attr( !has_post_thumbnail() ? 'no-thumbnail' : '' ); ?>">
-                    <?php if(has_post_thumbnail()): ?>
-                        <?php the_post_thumbnail(); ?>
-                    <?php endif; ?>
-                    <div class="l-main-visual__title">
-                        <h1 class="p-single-heading--h1"><?php echo esc_html( get_the_title() ); ?></h1>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('l-contents'); ?>>
+                    <div class="l-main-visual l-main-visual--single p-text--main-visual <?php echo esc_attr( !has_post_thumbnail() ? 'no-thumbnail' : '' ); ?>">
+                        <?php if(has_post_thumbnail()): ?>
+                            <?php the_post_thumbnail(); ?>
+                        <?php endif; ?>
+                        <div class="l-main-visual__title">
+                            <h1 class="p-single-heading--h1"><?php echo esc_html( get_the_title() ); ?></h1>
+                        </div>
                     </div>
-                </div>
 
                     <section>
                         <div class="l-content--single">
                             <?php the_content(); ?>
+                            <?php
+                            wp_link_pages(array(
+                                'before' => '<div class="page-links">' . __('Pages:', 'hamburger'),
+                                'after'  => '</div>',
+                            ));
+                            ?>
                         </div>
                     </section>
                 </article>

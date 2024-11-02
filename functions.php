@@ -18,11 +18,13 @@ function theme_setup(){
     // titleタグ
     add_theme_support('title-tag');
     // アイキャッチ画像
-    add_theme_support('post-thumbnails'); 
+    add_theme_support('post-thumbnails');
+    //  RSSフィードの自動サポート機能
+    add_theme_support('automatic-feed-links'); 
     // メニュー
     register_nav_menus(
         array(
-            'main_menu' => __( 'メインメニュー' ),
+            'main_menu' => 'メインメニュー',
             'footer_menu' => 'フッターメニュー',
         )
     );
